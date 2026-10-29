@@ -3979,7 +3979,7 @@
       ]
     },
     {
-      "id": "kimi-k3.1-pro",
+      "id": "k3.1-pro",
       "object": "model",
       "created": 1792713600,
       "owned_by": "moonshot",
@@ -4006,7 +4006,7 @@
       ]
     },
     {
-      "id": "kimi-k3.1-pro-highspeed",
+      "id": "k3.1-pro-highspeed",
       "object": "model",
       "created": 1792713600,
       "owned_by": "moonshot",

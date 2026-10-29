@@ -1,0 +1,32 @@
+name: build-darwin-arm64
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  GO_VERSION: '1.26.10'
+
+jobs:
+  build:
+    name: Build macOS Apple Silicon binary
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-go@v6
+        with:
+          go-version: ${{ env.GO_VERSION }}
+          cache: true
+      - name: Build binary
+        run: |
+          set -euo pipefail
+          CGO_ENABLED=1 GOOS=darwin GOARCH=arm64 go build \
+            -o cli-proxy-api ./cmd/server/
+          file cli-proxy-api
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cli-proxy-api-darwin-arm64
+          path: cli-proxy-api
+          if-no-files-found: error

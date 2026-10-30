@@ -17,8 +17,7 @@ import (
 const ModelsRefreshInterval = 3 * time.Hour
 
 var modelsURLs = []string{
-	"https://raw.githubusercontent.com/router-for-me/models/refs/heads/main/models.json",
-	"https://models.router-for.me/models.json",
+	"https://raw.githubusercontent.com/zhifeimi/CLIProxyAPI/main/internal/registry/models/models.json",
 }
 
 //go:embed models/models.json
